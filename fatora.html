@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتعاب المحاماة</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>اتعاب المحاماة</h1>
+
+        <form id="lawyerForm">
+            <label for="clientName">اسم العميل:</label>
+            <input type="text" id="clientName" required>
+
+            <label for="clientId">رقم العميل:</label>
+            <input type="text" id="clientId" required>
+
+            <label for="caseNumber">رقم القضية:</label>
+            <input type="text" id="caseNumber" required>
+
+            <label for="caseType">نوع القضية:</label>
+            <input type="text" id="caseType" required>
+
+            <label for="sessions">عدد الجلسات:</label>
+            <input type="number" id="sessions" required>
+
+            <label for="sessionPrice">سعر الجلسة الواحدة:</label>
+            <input type="number" id="sessionPrice" required>
+
+            <label for="consultations">عدد الإستشارات:</label>
+            <input type="number" id="consultations" required>
+
+            <label for="consultationPrice">سعر الإستشارة الواحدة:</label>
+            <input type="number" id="consultationPrice" required>
+              
+
+            <center>
+                <p id="p1">
+                     يرجى تحويل المبلغ المحدد  إلى الحساب المصرفي التالي<br>
+                    <strong>
+                        BH76 AUBB 000061717613 00<br>
+                    </strong>
+                    قبل الموعد المحدد للمحكمة 
+                    <br>
+                   ملاحظة: يرجى إرفاق صورة للفاتورة المدفوعة قبل الموعد المحدد للجلسة القادمة خلاف ذلك قد يؤدي إلى تأخير أو إلغاء الخدمات المقدمة      
+                   <br>  
+              
+                 <strong>
+                    صادر عن المحامي زهير ميرزا جعفر زهير
+                 </strong>
+            </p>
+            </center>
+
+            <button type="button" onclick="calculateFees()">احسب الاتعاب</button>
+        </form>
+
+        <table id="feesTable" style="display: none;">
+            <thead>
+                <tr>
+                    <th>المعلومات</th>
+                    <th>القيمة</th>
+                </tr>
+            </thead>
+            <tbody id="feesTableBody">
+                <!-- الجدول سيتم ملؤه بواسطة JavaScript -->
+            </tbody>
+        </table>
+
+        <button onclick="generatePDF()">تحويل إلى PDF</button>
+    </div>
+
+    <script src="scrpit.js"></script>
+    
+    
+</body>
+
+</html>
